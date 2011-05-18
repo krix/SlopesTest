@@ -18,7 +18,7 @@ package
 			drag.x = 600;
 			drag.y = 600;
 			maxVelocity.x = 120;
-			maxVelocity.y = acceleration.y;
+			maxVelocity.y = 400;
 		}
 		
 		override public function update():void
@@ -36,10 +36,18 @@ package
 				acceleration.x += drag.x;
 			}
 						
-			if(FlxG.keys.justPressed("X") && !velocity.y)
+			if(FlxG.keys.justPressed("X"))
 			{
-				velocity.y = -acceleration.y/2;
+				if((acceleration.y > 0 && isTouching(FLOOR)) || (acceleration.y < 0 && isTouching(CEILING))){
+					velocity.y = -acceleration.y / 2;
+				}
 			}
+			
+			if(FlxG.keys.justPressed("G"))
+			{
+				acceleration.y = -acceleration.y;
+			}
+
 		}
 		
 	}

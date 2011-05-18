@@ -14,7 +14,7 @@ package
         {			
 			FlxG.bgColor = 0xff006699;
 			
-			add(new FlxText(32, 32, 100, "I CAN HAZ SLOPEZ!"));
+			add(new FlxText(32, 16, 600, "[CURSOR KEYS] MOVE / [X] JUMP / [G] SWITCH GRAVITY"));
 			
             _map = new FlxTilemapExt;
             _map.loadMap(new MapData, MapTiles)

@@ -183,8 +183,8 @@ package
 		final private function solveCollisionSlopeFloorLeft(slope:FlxTile, obj:FlxObject):void
 		{						
 			//calculate the corner point of the object
-			_objPoint.x = uint(obj.x + obj.width + _snapping);
-			_objPoint.y = uint(obj.y + obj.height);
+			_objPoint.x = FlxU.floor(obj.x + obj.width + _snapping);
+			_objPoint.y = FlxU.floor(obj.y + obj.height);
 			
 			//calculate position of the point on the slope that the object might overlap
 			//this would be one side of the object projected onto the slope's surface
@@ -213,8 +213,8 @@ package
 		final private function solveCollisionSlopeFloorRight(slope:FlxTile, obj:FlxObject):void
 		{							
 			//calculate the corner point of the object
-			_objPoint.x = uint(obj.x - _snapping);
-			_objPoint.y = uint(obj.y + obj.height);
+			_objPoint.x = FlxU.floor(obj.x - _snapping);
+			_objPoint.y = FlxU.floor(obj.y + obj.height);
 			
 			//calculate position of the point on the slope that the object might overlap
 			//this would be one side of the object projected onto the slope's surface
@@ -243,8 +243,8 @@ package
 		final private function solveCollisionSlopeCeilLeft(slope:FlxTile, obj:FlxObject):void
 		{							
 			//calculate the corner point of the object
-			_objPoint.x = uint(obj.x + obj.width + _snapping);
-			_objPoint.y = uint(obj.y);
+			_objPoint.x = FlxU.floor(obj.x + obj.width + _snapping);
+			_objPoint.y = FlxU.ceil(obj.y);
 			
 			//calculate position of the point on the slope that the object might overlap
 			//this would be one side of the object projected onto the slope's surface
@@ -273,8 +273,8 @@ package
 		final private function solveCollisionSlopeCeilRight(slope:FlxTile, obj:FlxObject):void
 		{																
 			//calculate the corner point of the object
-			_objPoint.x = uint(obj.x - _snapping);
-			_objPoint.y = uint(obj.y);
+			_objPoint.x = FlxU.floor(obj.x - _snapping);
+			_objPoint.y = FlxU.ceil(obj.y);
 			
 			//calculate position of the point on the slope that the object might overlap
 			//this would be one side of the object projected onto the slope's surface
